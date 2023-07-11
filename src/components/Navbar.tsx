@@ -1,73 +1,64 @@
 import { useState } from "react";
 import "../styles/Navbar.css";
-import Home from "./Home";
-import Planets from "./Planets";
-import Phenomena from "./Phenomena";
+interface NavbarProps {
+	onLinkClick: (component: string) => void;
+}
 
-function Navbar() {
-  const [isOpen, setIsOpen] = useState(false);
-  const [activeLink, setActiveLink] = useState("Home");
+function Navbar(props: NavbarProps) {
+	const [isOpen, setIsOpen] = useState(false);
+	const [activeLink, setActiveLink] = useState("Home");
 
-  const toggleMenu = () => {
-    setIsOpen(!isOpen);
-  };
+	const toggleMenu = () => {
+		setIsOpen(!isOpen);
+	};
 
-  const handleLinkClick = (link) => {
-    setActiveLink(link);
-    setIsOpen(false);
-  };
+	const handleLinkClick = (component: string) => {
+		setActiveLink(component);
+		props.onLinkClick(component);
+		console.log(component);
+	};
 
-  let content;
-  if (activeLink === "Home") {
-    content = <Home />;
-  } else if (activeLink === "Planets") {
-    content = <Planets />;
-  } else if (activeLink === "Phenomena") {
-    content = <Phenomena />;
-  }
-
-  return (
-    <nav className="navbar">
-      <div className="navbar-logo">
-        <img
-          className="logo"
-          src="/public/images/black-hole.png"
-          alt="an image of a black hole"
-        />
-      </div>
-      <div className={`navbar-menu ${isOpen ? "is-open" : ""}`}>
-        <a
-          href="#"
-          className={`navbar-item ${activeLink === "Home" ? "active" : ""}`}
-          onClick={() => handleLinkClick("Home")}
-        >
-          Home
-        </a>
-        <a
-          href="#"
-          className={`navbar-item ${
-            activeLink === "Planets" ? "active" : ""
-          }`}
-          onClick={() => handleLinkClick("Planets")}
-        >
-          Planets
-        </a>
-        <a
-          href="#"
-          className={`navbar-item ${
-            activeLink === "Phenomena" ? "active" : ""
-          }`}
-          onClick={() => handleLinkClick("Phenomena")}
-        >
-          Phenomena
-        </a>
-      </div>
-      <button className="navbar-toggle" onClick={toggleMenu}>
-        <span className="navbar-toggle-icon"></span>
-      </button>
-      <div className="navbar-content">{content}</div>
-    </nav>
-  );
+	return (
+		<nav className="navbar">
+			<img
+				className="logo"
+				src="/images/black-hole.png"
+				alt="an image of a black hole"
+			/>
+			<div className={`navbar-menu ${isOpen ? "is-open" : ""}`}>
+				<a
+					href="#"
+					className={`navbar-item ${
+						activeLink === "Home" ? "active" : ""
+					}`}
+					onClick={() => handleLinkClick("Home")}
+				>
+					Home
+				</a>
+				<a
+					href="#"
+					className={`navbar-item ${
+						activeLink === "Planets" ? "active" : ""
+					}`}
+					onClick={() => handleLinkClick("Planets")}
+				>
+					Planets
+				</a>
+				<a
+					href="#"
+					className={`navbar-item ${
+						activeLink === "Phenomena" ? "active" : ""
+					}`}
+					onClick={() => handleLinkClick("Phenomena")}
+				>
+					Phenomena
+				</a>
+			</div>
+			<button className="navbar-toggle" onClick={toggleMenu}>
+				<span className="navbar-toggle-icon"></span>
+			</button>
+		</nav>
+	);
 }
 
 export default Navbar;
