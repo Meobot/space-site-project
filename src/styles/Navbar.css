@@ -12,111 +12,23 @@
 	padding: 10px;
 }
 
-.navbar-menu {
-	display: flex;
-	flex-direction: column;
-	position: absolute;
-	top: 100%;
-	left: 0;
-	width: 100%;
-	background-color: rgb(36, 18, 54);
-	color: #fff;
-	padding: 10px;
-	transition: transform 0.3s ease-in-out;
-	transform: translateY(-100%);
-}
-
-.navbar-menu.is-open {
-	transform: translateY(0);
-}
-
-.navbar-item {
-	display: block;
-	padding: 10px;
-	text-align: center;
-	text-decoration: none;
-	color: #fff;
-}
-
-@media screen and (min-width: 768px) {
-	.navbar {
-		flex-direction: row;
-	}
-
-	.navbar-menu {
-		position: static;
-		transform: none;
-		width: auto;
-		background-color: transparent;
-		color: rgb(36, 18, 54);
-		padding: 0;
-		display: flex;
-		flex-direction: row;
-	}
-
-	.navbar-item {
-		padding: 10px;
-		margin: 0 10px;
-		color: #fff;
-		background-color: transparent;
-	}
-
-	.navbar-item:hover {
-		background-color: #fff;
-		color: rgb(36, 18, 54);
-	}
-}
-
 .navbar-toggle {
 	background-color: transparent;
 	border: none;
 	cursor: pointer;
-	display: block;
+	padding: 0;
+  }
+  
+  .navbar-toggle:focus {
+	outline: none;
+  }
+  
+  .navbar-toggle-icon {
 	width: 30px;
 	height: 30px;
-	position: relative;
-	z-index: 1;
-}
-
-.navbar-toggle-icon {
 	display: block;
-	position: absolute;
-	top: 50%;
-	left: 50%;
-	transform: translate(-50%, -50%);
-	width: 20px;
-	height: 2px;
-	background-color: #fff;
-	transition: transform 0.3s ease-in-out;
-}
-
-.navbar-toggle-icon::before,
-.navbar-toggle-icon::after {
-	content: "";
-	display: block;
-	position: absolute;
-	width: 20px;
-	height: 2px;
-	background-color: #fff;
-	transition: transform 0.3s ease-in-out;
-}
-
-.navbar-toggle-icon::before {
-	transform: translateY(-6px);
-}
-
-.navbar-toggle-icon::after {
-	transform: translateY(6px);
-}
-
-.navbar-toggle.is-open .navbar-toggle-icon {
-	transform: rotate(45deg);
-}
-
-.navbar-toggle.is-open .navbar-toggle-icon::before {
-	transform: translateY(0) rotate(45deg);
-}
-
-.navbar-toggle.is-open .navbar-toggle-icon::after {
-	transform: translateY(0) rotate(-45deg);
-}
+	border: none;
+	padding: 0;
+	background: none;
+  }
+  
