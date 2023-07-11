@@ -25,7 +25,7 @@ function Navbar(props: NavbarProps) {
 				src="/images/black-hole.png"
 				alt="an image of a black hole"
 			/>
-			<div className={`navbar-menu ${isOpen ? "is-open" : ""}`}>
+			<div className={`navbar-menu ${isOpen ? "" : "is-open"}`}>
 				<a
 					href="#"
 					className={`navbar-item ${
@@ -55,7 +55,10 @@ function Navbar(props: NavbarProps) {
 				</a>
 			</div>
 			<button className="navbar-toggle" onClick={toggleMenu}>
-				<span className="navbar-toggle-icon"></span>
+				<img
+					className="navbar-toggle-icon"
+					src="/images/menu-icon.png"
+				/>
 			</button>
 		</nav>
 	);
