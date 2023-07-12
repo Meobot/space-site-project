@@ -1,6 +1,7 @@
 import { useState } from "react";
 import "../styles/Navbar.css";
 import { planetData } from "../planetData";
+import { phenomenaData } from "../phenomenaData";
 
 function Navbar(props: NavbarProps) {
 	const [isOpen, setIsOpen] = useState(false);
@@ -23,6 +24,9 @@ function Navbar(props: NavbarProps) {
 		if (category === "Planets") {
 			const planets = planetData.map((planet) => planet.name);
 			setMenuItems(planets);
+		} else if (category === "Phenomena") {
+			const phenomena = phenomenaData.map((phenomenon) => phenomenon.name);
+			setMenuItems(phenomena);
 		} else {
 			setMenuItems(initialMenuItems);
 		}
