@@ -1,7 +1,8 @@
+import "../styles/Home.css"
 
 function Home() {
 	return (
-		<div>
+		<div className="Home">
 			<div>Much</div>
 			<div>React</div>
 			<div>So</div>
