@@ -40,7 +40,7 @@
 	width: 300px;
 	background-color: rgb(36, 18, 54);
 	color: #fff;
-	padding: 70px 0px 0px;
+	padding: 70px 0px 30px;
 	transition: right 0.3s ease-in-out;
 	border-radius: 0px 0px 0px 50px;
 }

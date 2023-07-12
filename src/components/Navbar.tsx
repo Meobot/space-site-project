@@ -15,6 +15,7 @@ function Navbar(props: NavbarProps) {
 		"Planets",
 		"Phenomena",
 	]);
+	const [showGoBack, setShowGoBack] = useState(false);
 
 	const toggleMenu = () => {
 		setIsOpen(!isOpen);
@@ -24,13 +25,22 @@ function Navbar(props: NavbarProps) {
 		if (category === "Planets") {
 			const planets = planetData.map((planet) => planet.name);
 			setMenuItems(planets);
+			setShowGoBack(true);
 		} else if (category === "Phenomena") {
-			const phenomena = phenomenaData.map((phenomenon) => phenomenon.name);
+			const phenomena = phenomenaData.map(
+				(phenomenon) => phenomenon.name
+			);
 			setMenuItems(phenomena);
+			setShowGoBack(true);
 		} else {
-			setMenuItems(initialMenuItems);
+			<span onClick={handleGoBack}>X</span>;
 		}
-	}
+	};
+
+	const handleGoBack = () => {
+		setMenuItems(initialMenuItems);
+		setShowGoBack(false);
+	};
 
 	return (
 		<nav className="navbar">
@@ -40,6 +50,12 @@ function Navbar(props: NavbarProps) {
 				alt="an image of a black hole"
 			/>
 			<div className={`navbar-menu ${isOpen ? "is-open" : ""}`}>
+				{showGoBack && (
+					<div className="navbar-item" onClick={handleGoBack}>
+						X
+					</div>
+				)}
+
 				{menuItems.map((item) => (
 					<div
 						className="navbar-item"
