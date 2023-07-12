@@ -1,5 +1,6 @@
 import { useState } from "react";
 import "../styles/Navbar.css";
+
 interface NavbarProps {
 	onLinkClick: (component: string) => void;
 }
@@ -7,6 +8,17 @@ interface NavbarProps {
 function Navbar(props: NavbarProps) {
 	const [isOpen, setIsOpen] = useState(false);
 	const [activeLink, setActiveLink] = useState("Home");
+	const [menuItems, setMenuItems] = useState([
+		"Home",
+		"Planets",
+		"Phenomena",
+	]);
+	const [initialMenuItems, setInitialMenuItems] = useState([
+		"Home",
+		"Planets",
+		"Phenomena",
+	]);
+	const [showGoBack, setShowGoBack] = useState(false);
 
 	const toggleMenu = () => {
 		setIsOpen(!isOpen);
@@ -16,6 +28,22 @@ function Navbar(props: NavbarProps) {
 		setActiveLink(component);
 		props.onLinkClick(component);
 		console.log(component);
+
+		// Update menu items based on the clicked component
+		if (component === "Planets") {
+			setMenuItems(["Planet 1", "Planet 2", "Planet 3"]);
+			setShowGoBack(true);
+		} else if (component === "Phenomena") {
+			setMenuItems(["Phenomenon 1", "Phenomenon 2", "Phenomenon 3"]);
+			setShowGoBack(true);
+		} else {
+			setMenuItems(["Home", "Planets", "Phenomena"]);
+			setShowGoBack(false);
+		}
+	};
+
+	const handleGoBack = () => {
+		setMenuItems(initialMenuItems);
 	};
 
 	return (
@@ -26,33 +54,23 @@ function Navbar(props: NavbarProps) {
 				alt="an image of a black hole"
 			/>
 			<div className={`navbar-menu ${isOpen ? "is-open" : ""}`}>
-				<a
-					href="#"
-					className={`navbar-item ${
-						activeLink === "Home" ? "active" : ""
-					}`}
-					onClick={() => handleLinkClick("Home")}
-				>
-					Home
-				</a>
-				<a
-					href="#"
-					className={`navbar-item ${
-						activeLink === "Planets" ? "active" : ""
-					}`}
-					onClick={() => handleLinkClick("Planets")}
-				>
-					Planets
-				</a>
-				<a
-					href="#"
-					className={`navbar-item ${
-						activeLink === "Phenomena" ? "active" : ""
-					}`}
-					onClick={() => handleLinkClick("Phenomena")}
-				>
-					Phenomena
-				</a>
+				{showGoBack && (
+					<div className="navbar-item" onClick={handleGoBack}>
+						Go Back
+					</div>
+				)}
+				{menuItems.map((item, index) => (
+					<a
+						href="#"
+						key={index}
+						className={`navbar-item ${
+							activeLink === item ? "active" : ""
+						}`}
+						onClick={() => handleLinkClick(item)}
+					>
+						{item}
+					</a>
+				))}
 				<div className="navbar-close" onClick={toggleMenu}>
 					<span>&times;</span>
 				</div>
