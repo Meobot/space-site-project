@@ -1,4 +1,3 @@
-import React from "react";
 
 function Home() {
 	return (
@@ -7,6 +6,7 @@ function Home() {
 			<div>React</div>
 			<div>So</div>
 			<div>Component</div>
+			<div>Wow</div>
 		</div>
 	);
 }
