@@ -1,13 +1,9 @@
 import { useState } from "react";
 import "../styles/Navbar.css";
-
-interface NavbarProps {
-	onLinkClick: (component: string) => void;
-}
+import { planetData } from "../planetData";
 
 function Navbar(props: NavbarProps) {
 	const [isOpen, setIsOpen] = useState(false);
-	const [activeLink, setActiveLink] = useState("Home");
 	const [menuItems, setMenuItems] = useState([
 		"Home",
 		"Planets",
@@ -18,33 +14,19 @@ function Navbar(props: NavbarProps) {
 		"Planets",
 		"Phenomena",
 	]);
-	const [showGoBack, setShowGoBack] = useState(false);
 
 	const toggleMenu = () => {
 		setIsOpen(!isOpen);
 	};
 
-	const handleLinkClick = (component: string) => {
-		setActiveLink(component);
-		props.onLinkClick(component);
-		console.log(component);
-
-		// Update menu items based on the clicked component
-		if (component === "Planets") {
-			setMenuItems(["Planet 1", "Planet 2", "Planet 3"]);
-			setShowGoBack(true);
-		} else if (component === "Phenomena") {
-			setMenuItems(["Phenomenon 1", "Phenomenon 2", "Phenomenon 3"]);
-			setShowGoBack(true);
+	const handleCategoryClick = (category: string) => {
+		if (category === "Planets") {
+			const planets = planetData.map((planet) => planet.name);
+			setMenuItems(planets);
 		} else {
-			setMenuItems(["Home", "Planets", "Phenomena"]);
-			setShowGoBack(false);
+			setMenuItems(initialMenuItems);
 		}
-	};
-
-	const handleGoBack = () => {
-		setMenuItems(initialMenuItems);
-	};
+	}
 
 	return (
 		<nav className="navbar">
@@ -54,22 +36,16 @@ function Navbar(props: NavbarProps) {
 				alt="an image of a black hole"
 			/>
 			<div className={`navbar-menu ${isOpen ? "is-open" : ""}`}>
-				{showGoBack && (
-					<div className="navbar-item" onClick={handleGoBack}>
-						Go Back
-					</div>
-				)}
-				{menuItems.map((item, index) => (
-					<a
-						href="#"
-						key={index}
-						className={`navbar-item ${
-							activeLink === item ? "active" : ""
-						}`}
-						onClick={() => handleLinkClick(item)}
+				{menuItems.map((item) => (
+					<div
+						className="navbar-item"
+						key={item}
+						onClick={() => {
+							handleCategoryClick(item);
+						}}
 					>
 						{item}
-					</a>
+					</div>
 				))}
 				<div className="navbar-close" onClick={toggleMenu}>
 					<span>&times;</span>
