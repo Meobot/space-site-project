@@ -1,4 +1,6 @@
-function PlanetCard({ planet }) {
+function PlanetCard(props) {
+
+	const planet = props.planet.toLowerCase();
 
 	console.log(planet);
 	return (
@@ -10,7 +12,6 @@ function PlanetCard({ planet }) {
 				/>
 
 				<div className="planet-card-image-orbit">
-					<img src="/images/orbit.png" alt="an image of an orbit" />
 				</div>
 			</div>
 		</div>
