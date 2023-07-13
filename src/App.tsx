@@ -1,7 +1,8 @@
 import { useState } from "react";
+import Home from "./components/Home";
 import Navbar from "./components/Navbar";
 import PlanetCard from "./components/PlanetCard";
-import {planetData} from "./planetData"
+import { planetData } from "./planetData"
 import "./styles/App.css";
 
 function App() {
@@ -22,7 +23,7 @@ function App() {
       {activePlanet ? (
         <PlanetCard planet={activePlanet} />
       ) : (
-        <h1>Welcome to the Home page!</h1>
+        <Home />
       )}
     </div>
   );
