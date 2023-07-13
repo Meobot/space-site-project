@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import "../styles/Navbar.css";
 import { planetData } from "../planetData";
 import { phenomenaData } from "../phenomenaData";
@@ -21,9 +21,23 @@ function Navbar(props: NavbarProps) {
 		setIsOpen(!isOpen);
 	};
 
+	const handlePlanetClick = (planet: string) => {
+		props.onPlanetSelect(planet);
+	};
+
 	const handleCategoryClick = (category: string) => {
 		if (category === "Planets") {
-			const planets = planetData.map((planet) => planet.name);
+			const planets = planetData.map((planet) => (
+				<span
+					className=""
+					key={planet.id}
+					onClick={() => {
+						handlePlanetClick(planet.name);
+					}}
+				>
+					{planet.name}
+				</span>
+			));
 			setMenuItems(planets);
 			setShowGoBack(true);
 		} else if (category === "Phenomena") {
@@ -33,7 +47,8 @@ function Navbar(props: NavbarProps) {
 			setMenuItems(phenomena);
 			setShowGoBack(true);
 		} else {
-			<span onClick={handleGoBack}>X</span>;
+			setMenuItems(initialMenuItems);
+			setShowGoBack(false);
 		}
 	};
 
@@ -51,8 +66,8 @@ function Navbar(props: NavbarProps) {
 			/>
 			<div className={`navbar-menu ${isOpen ? "is-open" : ""}`}>
 				{showGoBack && (
-					<div className="navbar-item" onClick={handleGoBack}>
-						X
+					<div className="navbar-item go-back" onClick={handleGoBack}>
+						Go Back
 					</div>
 				)}
 
