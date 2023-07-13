@@ -1,8 +1,11 @@
-import React from 'react'
 
-function PlanetCard() {
+
+function PlanetCard(props) {
   return (
-	<div></div>
+	<div className="planet-card">
+		<img src={`/images/${props.planet}.png`} alt={`an image of ${props.planet}`} />
+		<h2>{props.planet}</h2>
+	</div>
   )
 }
 
