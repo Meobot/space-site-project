@@ -1,5 +1,6 @@
 export const planetData = [
 	{
+		id: 1,
 		name: "Mercury",
 		description:
 			"Mercury is the smallest planet in the Solar System and the closest to the Sun. Its orbit around the Sun takes 87.97 Earth days, the shortest of all the planets in the Solar System. It is named after the Roman deity Mercury, the messenger of the gods.",
@@ -9,6 +10,7 @@ export const planetData = [
 		numberOfMoons: "0",
 	},
 	{
+		id: 2,
 		name: "Venus",
 		description:
 			"Venus is the second planet from the Sun. It is named after the Roman goddess of love and beauty. As the brightest natural object in Earth's night sky after the Moon, Venus can cast shadows and can be, on rare occasion, visible to the naked eye in broad daylight.",
@@ -18,6 +20,7 @@ export const planetData = [
 		numberOfMoons: "0",
 	},
 	{
+		id: 3,
 		name: "Earth",
 		description:
 			"Earth is the third planet from the Sun and the only astronomical object known to harbor life. About 29% of Earth's surface is land consisting of continents and islands. The remaining 71% is covered with water, mostly by oceans but also by lakes, rivers and other fresh water, which together constitute the hydrosphere.",
@@ -27,6 +30,7 @@ export const planetData = [
 		numberOfMoons: "1",
 	},
 	{
+		id: 4,
 		name: "Mars",
 		description:
 			"Mars is the fourth planet from the Sun and the second-smallest planet in the Solar System, being larger than only Mercury. In English, Mars carries the name of the Roman god of war and is often referred to as the 'Red Planet'.",
@@ -36,6 +40,7 @@ export const planetData = [
 		numberOfMoons: "2",
 	},
 	{
+		id: 5,
 		name: "Jupiter",
 		description:
 			"Jupiter is the fifth planet from the Sun and the largest in the Solar System. It is a gas giant with a mass one-thousandth that of the Sun, but two-and-a-half times that of all the other planets in the Solar System combined.",
@@ -45,6 +50,7 @@ export const planetData = [
 		numberOfMoons: "79",
 	},
 	{
+		id: 6,
 		name: "Saturn",
 		description:
 			"Saturn is the sixth planet from the Sun and the second-largest in the Solar System, after Jupiter. It is a gas giant with an average radius of about nine times that of Earth. It only has one-eighth the average density of Earth.",
@@ -54,6 +60,7 @@ export const planetData = [
 		numberOfMoons: "82",
 	},
 	{
+		id: 7,
 		name: "Uranus",
 		description:
 			"Uranus is the seventh planet from the Sun. Its name is a reference to the Greek god of the sky, Uranus according to Greek mythology, was the great-grandfather of Ares (Mars), grandfather of Zeus (Jupiter) and father of Cronus (Saturn).",
@@ -63,6 +70,7 @@ export const planetData = [
 		numberOfMoons: "27",
 	},
 	{
+		id: 8,
 		name: "Neptune",
 		description:
 			"Neptune is the eighth and farthest-known Solar planet from the Sun. In the Solar System, it is the fourth-largest planet by diameter, the third-most-massive planet, and the densest giant planet. It is 17 times the mass of Earth, slightly more massive than its near-twin Uranus.",
@@ -72,6 +80,7 @@ export const planetData = [
 		numberOfMoons: "14",
 	},
 	{
+		id: 9,
 		name: "Pluto",
 		description:
 			"Pluto is an icy dwarf planet in the Kuiper belt, a ring of bodies beyond the orbit of Neptune. It was the first Kuiper belt object to be discovered and is the largest known plutoid. Pluto was discovered by Clyde Tombaugh in 1930 as the ninth planet from the Sun.",
