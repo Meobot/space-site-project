@@ -19,3 +19,18 @@
 	font-weight: 700;
 	margin: 0px 0px 20px;
 }
+
+.planet-card-description {
+	font-size: 14px;
+}
+
+.planet-card-link-container {
+	padding: 20px 0px;
+}
+
+.planet-card-link {
+	font-size: 14px;
+	font-weight: 700;
+	color: #2f5488;
+	text-decoration: underline;
+}
