@@ -10,7 +10,14 @@ function App() {
 
 	const handlePlanetSelect = (planet: string) => {
 		setActivePlanet(planet);
-		console.log(planet);
+	};
+
+	const getPlanetDescription = (planet: string) => {
+		const planetInfo = planetData.find(
+			(planetInfo) => planetInfo.name === planet
+		);
+
+		return planetInfo?.overview.content || "";
 	};
 
 	return (
@@ -20,7 +27,10 @@ function App() {
 				onPlanetSelect={handlePlanetSelect}
 			/>
 			{activePlanet ? (
-				<PlanetCard  planet={activePlanet} />
+				<PlanetCard 
+					planet={activePlanet} 
+					planetDescription={getPlanetDescription(activePlanet)}
+					/>
 			) : (
 				<Home />
 			)}
