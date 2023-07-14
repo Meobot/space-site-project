@@ -1,6 +1,7 @@
 import { useState } from "react";
 import "../styles/PlanetCard.css";
 import PlanetModes from "./PlanetModes";
+import PlanetSpecs from "./PlanetSpecs";
 
 interface PlanetCardProps {
 	planet: string;
@@ -58,6 +59,9 @@ function PlanetCard(props: PlanetCardProps) {
 						Wikipedia
 					</a>
 				</div>
+				<PlanetSpecs
+					planetSpecs={props.planetSpecs}
+				/>
 			</div>
 		</div>
 	);
