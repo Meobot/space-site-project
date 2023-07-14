@@ -1,0 +1,8 @@
+.planet-modes {
+	display: flex;
+	justify-content: space-evenly;
+	align-items: center;
+	padding: 20px;
+	border-top: 1px solid #6abcff;
+	border-bottom: 1px solid #6abcff;
+}
