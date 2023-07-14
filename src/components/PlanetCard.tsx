@@ -1,18 +1,51 @@
-function PlanetCard(props) {
+import { useState } from "react";
+import "../styles/PlanetCard.css";
+import PlanetModes from "./PlanetModes";
 
-	const planet = props.planet.toLowerCase();
+interface PlanetCardProps {
+	planet: string;
+	planetDescription: string;
+}
 
-	console.log(planet);
+function PlanetCard(props: PlanetCardProps) {
+	const planetFileName: string = props.planet.toLowerCase();
+	const planetDisplayName: string = props.planet;
+	const [activeMode, setActiveMode] = useState("overview");
+
+	let imageSrc = `/images/planet-${planetFileName}.svg`;
+	const geologyImage = `/images/geology-${planetFileName}.png`;
+
+	if (activeMode === "internal") {
+		imageSrc = `/images/planet-${planetFileName}-internal.svg`;
+	}
+
+	const handlePlanetModeSelect = (mode: string) => {
+		setActiveMode(mode.toLowerCase());
+	};
+
 	return (
 		<div className="planet-card">
-			<div className="planet-card-image">
+			<PlanetModes handlePlanetModeSelect={handlePlanetModeSelect} />
+			<div className="planet-image-container">
 				<img
-					src={`/images/planet-${planet}.svg`}
-					alt={`an image of ${planet}`}
+					className="planet-card-image"
+					src={imageSrc}
+					alt={`an image of ${planetFileName}`}
 				/>
+			</div>
+			{geologyImage && activeMode === "geology" && (
+				<img
+					className="planet-card-geology-image"
+					src={geologyImage}
+					alt={`an image of ${planetFileName}'s geology`}
+				/>
+			)}
 
-				<div className="planet-card-image-orbit">
-				</div>
+			<div className="planet-card-info">
+				<h2 className="planet-card-name">{planetDisplayName}</h2>
+				<p className="planet-card-description">
+					{props.planetDescription}
+				</p>
 			</div>
 		</div>
 	);
