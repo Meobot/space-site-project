@@ -20,17 +20,32 @@ function App() {
 		return planetInfo?.overview.content || "";
 	};
 
+	const getPlanetSpecs = (planet: string) => {
+		const planetInfo = planetData.find(
+			(planetInfo) => planetInfo.name === planet
+		);
+
+		if (!planetInfo) {
+			return null;
+		}
+
+		return {
+			rotationTime: planetInfo.rotation,
+			revolutionTime: planetInfo.revolution,
+			radius: planetInfo.radius,
+			averageTemp: planetInfo.temperature,
+		};
+	};
+
 	return (
 		<div className="App">
-			<Navbar
-				planets={planetData}
-				onPlanetSelect={handlePlanetSelect}
-			/>
+			<Navbar planets={planetData} onPlanetSelect={handlePlanetSelect} />
 			{activePlanet ? (
-				<PlanetCard 
-					planet={activePlanet} 
+				<PlanetCard
+					planet={activePlanet}
 					planetDescription={getPlanetDescription(activePlanet)}
-					/>
+					planetSpecs={getPlanetSpecs(activePlanet)}
+				/>
 			) : (
 				<Home />
 			)}
