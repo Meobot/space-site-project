@@ -1,0 +1,22 @@
+.planet-specs {
+	padding-bottom: 30px;
+}
+
+.planet-spec {
+	border: 1px solid #6abcff;
+	padding: 20px 30px;
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	margin-bottom: 20px;
+}
+
+.planet-spec-name {
+	font-size: 0.7rem;
+	text-transform: uppercase;
+	letter-spacing: 1.2px;
+}
+
+.planet-spec-value {
+	font-weight: 700;
+}

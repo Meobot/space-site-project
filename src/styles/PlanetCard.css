@@ -1,3 +1,7 @@
+.planet-card {
+	height: auto;
+}
+
 .planet-image-container {
 	display: flex;
 	justify-content: center;
@@ -33,4 +37,8 @@
 	font-weight: 700;
 	color: #2f5488;
 	text-decoration: underline;
+}
+
+.planet-card-link:hover {
+	color: #6abcff;
 }

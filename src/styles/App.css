@@ -4,6 +4,6 @@
 	background-position: center;
 	color: #fff;
 	font-family: 'Roboto', sans-serif;
-	height: 100vh;
+	min-height: 100vh;
 	background-image: url(/images/bg-stars.svg);
 }
