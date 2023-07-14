@@ -46,6 +46,18 @@ function PlanetCard(props: PlanetCardProps) {
 				<p className="planet-card-description">
 					{props.planetDescription}
 				</p>
+				<div className="planet-card-link-container">
+					Source:
+					<a
+						className="planet-card-link"
+						href={`https://en.wikipedia.org/wiki/${planetDisplayName}`}
+						target="_blank"
+						rel="noreferrer"
+					>
+						{" "}
+						Wikipedia
+					</a>
+				</div>
 			</div>
 		</div>
 	);
