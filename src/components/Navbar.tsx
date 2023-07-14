@@ -2,7 +2,11 @@ import { useEffect, useState } from "react";
 import "../styles/Navbar.css";
 import { planetData } from "../planetData";
 
-function Navbar(props: NavbarProps) {
+interface NavbarProps {
+	onPlanetSelect: (planet: string) => void;
+}
+
+function Navbar({ onPlanetSelect }: NavbarProps) {
 	const [isOpen, setIsOpen] = useState(false);
 
 	const toggleMenu = () => {
@@ -29,7 +33,7 @@ function Navbar(props: NavbarProps) {
 							className="navbar-menu-item"
 							key={planet.name}
 							onClick={() => {
-								props.onPlanetSelect(planet.name);
+								onPlanetSelect(planet.name);
 								toggleMenu();
 							}}
 						>
