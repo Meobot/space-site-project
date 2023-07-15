@@ -9,6 +9,7 @@ function PlanetModes({ handlePlanetModeSelect }: PlanetModesProps) {
 			{modes.map((mode) => (
 				<div
 					className="planet-mode"
+					id={mode.toLowerCase()}
 					key={mode}
 					onClick={() => handlePlanetModeSelect(mode)}
 				>

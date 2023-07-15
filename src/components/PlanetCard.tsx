@@ -26,7 +26,10 @@ function PlanetCard(props: PlanetCardProps) {
 
 	return (
 		<div className="planet-card">
-			<PlanetModes handlePlanetModeSelect={handlePlanetModeSelect} />
+			<div className="planet-modes-container">
+				<PlanetModes handlePlanetModeSelect={handlePlanetModeSelect} />
+			</div>
+
 			<div className="planet-image-container">
 				<img
 					className="planet-card-image"
@@ -44,13 +47,11 @@ function PlanetCard(props: PlanetCardProps) {
 
 			<div className="planet-card-info">
 				<h2 className="planet-card-name">{planetDisplayName}</h2>
-				<p className="planet-card-description">
-					<div className="planet-card-description">
+					<p className="planet-card-description">
 						{activeMode === "overview" ? props.planetOverview : ""}
 						{activeMode === "internal" ? props.planetInternal : ""}
 						{activeMode === "geology" ? props.planetGeology : ""}
-					</div>
-				</p>
+					</p>
 				<div className="planet-card-link-container">
 					Source:
 					<a
@@ -63,6 +64,8 @@ function PlanetCard(props: PlanetCardProps) {
 						Wikipedia
 					</a>
 				</div>
+			</div>
+			<div className="planet-specs-container">
 				<PlanetSpecs planetSpecs={props.planetSpecs} />
 			</div>
 		</div>

@@ -10,3 +10,34 @@
 .planet-mode {
 	cursor: pointer;
 }
+
+@media screen and (min-width: 768px) {
+	.planet-modes {
+		flex-direction: column;
+		border: none;
+	}
+
+	.planet-mode {
+		border: 1px solid #6abcff;
+		width: 100%;
+		max-width: 300px;
+		margin-bottom: 20px;
+		padding: 1em;
+	}
+
+	#overview::before {
+		content: "01 ";
+	}
+	
+	#internal::before {
+		content: "02 ";
+	}
+
+	#geology::before {
+		content: "03 Surface ";
+	}
+
+	#internal::after {
+		content: " Structure";
+	}
+}
