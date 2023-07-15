@@ -59,6 +59,7 @@
 
 .navbar-menu-item {
 	padding: 20px;
+	font-size: 15px;
 	font-weight: 700;
 }
 
@@ -98,7 +99,7 @@
 	}
 
 	.navbar-menu-item {
-		padding: 8px;
+		padding: 6px;
 	}
 
 	.navbar-toggle {
