@@ -6,3 +6,7 @@
 	border-top: 1px solid #6abcff;
 	border-bottom: 1px solid #6abcff;
 }
+
+.planet-mode {
+	cursor: pointer;
+}
