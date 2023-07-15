@@ -3,7 +3,7 @@
 	background-size: cover;
 	background-position: center;
 	color: #fff;
-	font-family: 'Roboto', sans-serif;
+	font-family: "Victor Mono", monospace;
 	min-height: 100vh;
 	background-image: url(/images/bg-stars.svg);
 }
