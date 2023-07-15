@@ -12,12 +12,28 @@ function App() {
 		setActivePlanet(planet);
 	};
 
-	const getPlanetDescription = (planet: string) => {
+	const getPlanetOverview = (planet: string) => {
 		const planetInfo = planetData.find(
 			(planetInfo) => planetInfo.name === planet
 		);
 
 		return planetInfo?.overview.content || "";
+	};
+
+	const getPlanetInternal = (planet: string) => {
+		const planetInfo = planetData.find(
+			(planetInfo) => planetInfo.name === planet
+		);
+
+		return planetInfo?.structure.content || "";
+	};
+
+	const getPlanetGeology = (planet: string) => {
+		const planetInfo = planetData.find(
+			(planetInfo) => planetInfo.name === planet
+		);
+
+		return planetInfo?.geology.content || "";
 	};
 
 	const getPlanetSpecs = (planet: string) => {
@@ -43,7 +59,9 @@ function App() {
 			{activePlanet ? (
 				<PlanetCard
 					planet={activePlanet}
-					planetDescription={getPlanetDescription(activePlanet)}
+					planetOverview={getPlanetOverview(activePlanet)}
+					planetInternal={getPlanetInternal(activePlanet)}
+					planetGeology={getPlanetGeology(activePlanet)}
 					planetSpecs={getPlanetSpecs(activePlanet)}
 				/>
 			) : (
