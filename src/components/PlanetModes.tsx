@@ -1,5 +1,9 @@
 import "../styles/PlanetModes.css";
 
+type PlanetModesProps = {
+  handlePlanetModeSelect: (mode: string) => void;
+}
+
 function PlanetModes({ handlePlanetModeSelect }: PlanetModesProps) {
 
 	const modes = ["Overview", "Internal", "Geology"];
