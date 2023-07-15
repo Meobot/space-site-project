@@ -45,7 +45,11 @@ function PlanetCard(props: PlanetCardProps) {
 			<div className="planet-card-info">
 				<h2 className="planet-card-name">{planetDisplayName}</h2>
 				<p className="planet-card-description">
-					{props.planetDescription}
+					<div className="planet-card-description">
+						{activeMode === "overview" ? props.planetOverview : ""}
+						{activeMode === "internal" ? props.planetInternal : ""}
+						{activeMode === "geology" ? props.planetGeology : ""}
+					</div>
 				</p>
 				<div className="planet-card-link-container">
 					Source:
@@ -59,9 +63,7 @@ function PlanetCard(props: PlanetCardProps) {
 						Wikipedia
 					</a>
 				</div>
-				<PlanetSpecs
-					planetSpecs={props.planetSpecs}
-				/>
+				<PlanetSpecs planetSpecs={props.planetSpecs} />
 			</div>
 		</div>
 	);
