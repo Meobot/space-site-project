@@ -10,7 +10,6 @@ interface PlanetSpecsProps {
 }
 
 function PlanetSpecs({ planetSpecs }: PlanetSpecsProps) {
-	console.log(planetSpecs)
 	return (
 		<div className="planet-specs">
 			<div className="planet-spec">
