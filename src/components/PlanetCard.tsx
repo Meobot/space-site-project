@@ -6,6 +6,15 @@ import PlanetSpecs from "./PlanetSpecs";
 interface PlanetCardProps {
 	planet: string;
 	planetDescription: string;
+	planetSpecs: {
+		rotationTime: string;
+		revolutionTime: string;
+		radius: string;
+		averageTemp: string;
+	};
+	planetOverview: string;
+	planetInternal: string;
+	planetGeology: string;
 }
 
 function PlanetCard(props: PlanetCardProps) {

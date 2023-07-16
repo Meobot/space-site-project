@@ -23,6 +23,18 @@
 
 @media screen and (min-width: 768px) {
 	.planet-specs {
-		/* display: flex; */
+		display: flex;
+		justify-content: center;
+	}
+
+	.planet-spec {
+		flex-direction: column;
+		margin: 0px 10px 20px;
+		width: 100%;
+		max-width: 160px;
+	}
+
+	.planet-spec-name {
+		padding: 10px 0px;
 	}
 }

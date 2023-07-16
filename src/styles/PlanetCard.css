@@ -6,7 +6,8 @@
 }
 
 .planet-card-image {
-	width: 140px;
+	width: 100%;
+	max-width: 200px;
 }
 
 .planet-card-geology-image {
@@ -19,6 +20,7 @@
 
 .planet-card-info {
 	padding: 0px 30px;
+	max-width: 400px;
 }
 
 .planet-card-name {
@@ -48,43 +50,36 @@
 
 @media screen and (min-width: 768px) {
 	.planet-card {
-		display: grid;
-		grid-template-areas:
-			"image image"
-			"info modes"
-			"specs specs";
-		grid-template-columns: 1fr 1fr;
-		grid-template-rows: 1fr;
+		display: flex;
+		flex-wrap: wrap;
+		flex-direction: row-reverse;
+		justify-content: center;
+		align-items: center;
+		padding: 0px 40px;
+		max-width: 800px;
 	}
 
 	.planet-image-container {
-		grid-area: image;
+		flex-basis: 100%;
+		order: 0;
+	}
+
+	.planet-card-image {
+		max-width: 300px;
 	}
 
 	.planet-card-info {
-		grid-area: info;
-		display: flex;
-		flex-direction: column;
-		align-items: flex-start;
+		flex-basis: 50%;
+		order: 1;
 	}
 
 	.planet-modes-container {
-		grid-area: modes;
+		flex-basis: 50%;
+		order: 1;
 	}
 
-	.planet-specs {
-		grid-area: specs;
-	}
-
-	.planet-card-geology-image {
-		top: 35%;
-	}
-
-	.planet-card-name {
-		font-size: 42px;
-	}
-
-	.planet-card-description {
-		width: 300px;
+	.planet-specs-container {
+		flex-basis: 100%;
+		order: 2;
 	}
 }

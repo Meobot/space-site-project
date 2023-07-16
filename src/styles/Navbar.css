@@ -2,9 +2,10 @@
 	display: flex;
 	justify-content: space-between;
 	align-items: center;
-	padding: 10px;
+	padding: 10px 30px;
 	color: #fff;
 	background: transparent;
+	width: 100%;
 }
 
 .logo {
@@ -99,7 +100,7 @@
 	}
 
 	.navbar-menu-item {
-		padding: 6px;
+		padding: 10px 7px;
 	}
 
 	.navbar-toggle {
@@ -112,5 +113,7 @@
 }
 
 @media screen and (min-width: 768px) {
-	
+	.navbar-menu-item {
+		padding: 10px 20px;
+	}
 }
