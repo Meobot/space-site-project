@@ -6,7 +6,7 @@ import { planetData } from "./planetData";
 import "./styles/App.css";
 
 function App() {
-	const [activePlanet, setActivePlanet] = useState("");
+	const [activePlanet, setActivePlanet] = useState("Earth");
 
 	const handlePlanetSelect = (planet: string) => {
 		setActivePlanet(planet);
@@ -56,17 +56,13 @@ function App() {
 	return (
 		<div className="App">
 			<Navbar planets={planetData} onPlanetSelect={handlePlanetSelect} />
-			{activePlanet ? (
-				<PlanetCard
-					planet={activePlanet}
-					planetOverview={getPlanetOverview(activePlanet)}
-					planetInternal={getPlanetInternal(activePlanet)}
-					planetGeology={getPlanetGeology(activePlanet)}
-					planetSpecs={getPlanetSpecs(activePlanet)}
-				/>
-			) : (
-				<Home />
-			)}
+			<PlanetCard
+				planet={activePlanet}
+				planetOverview={getPlanetOverview(activePlanet)}
+				planetInternal={getPlanetInternal(activePlanet)}
+				planetGeology={getPlanetGeology(activePlanet)}
+				planetSpecs={getPlanetSpecs(activePlanet)}
+			/>
 		</div>
 	);
 }
