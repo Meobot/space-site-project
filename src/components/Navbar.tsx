@@ -3,6 +3,7 @@ import "../styles/Navbar.css";
 import { planetData } from "../planetData";
 
 interface NavbarProps {
+	planets: typeof planetData;
 	onPlanetSelect: (planet: string) => void;
 }
 

@@ -1,5 +1,4 @@
 import { useState } from "react";
-import Home from "./components/Home";
 import Navbar from "./components/Navbar";
 import PlanetCard from "./components/PlanetCard";
 import { planetData } from "./planetData";

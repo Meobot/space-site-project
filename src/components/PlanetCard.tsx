@@ -5,7 +5,6 @@ import PlanetSpecs from "./PlanetSpecs";
 
 interface PlanetCardProps {
 	planet: string;
-	planetDescription: string;
 	planetSpecs: {
 		rotationTime: string;
 		revolutionTime: string;
