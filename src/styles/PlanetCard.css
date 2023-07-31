@@ -83,3 +83,40 @@
 		order: 2;
 	}
 }
+
+@media screen and (min-width: 1024px) {
+	.planet-card {
+		max-width: 1000px;
+		flex-direction: row;
+	}
+
+	.planet-image-container {
+		flex-basis: 50%;
+		order: 1;
+	}
+
+	.planet-card-image {
+		max-width: 400px;
+	}
+
+	.planet-card-info {
+		flex-basis: 50%;
+		order: 1;
+	}
+
+	.planet-modes-container {
+		flex-basis: 50%;
+		order: 2;
+	}
+
+	.planet-specs-container {
+		flex-basis: 50%;
+		order: 2;
+	}
+
+	.planet-card-geology-image {
+		width: 200px;
+		top: 60%;
+		left: 40%;
+	}
+}

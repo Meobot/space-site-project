@@ -33,11 +33,29 @@
 		content: "02 ";
 	}
 
+	#internal::after {
+		content: " Structure";
+	}
+
 	#geology::before {
 		content: "03 Surface ";
 	}
+}
 
-	#internal::after {
-		content: " Structure";
+@media screen and (min-width: 1024px) {
+	.planet-modes {
+		flex-direction: row;
+		border: none;
+	}
+
+	.planet-mode {
+		border: 1px solid #6abcff;
+		width: 100%;
+		max-width: 300px;
+		margin: 0px 25px;
+		min-height: 100px;
+		min-width: 300px;
+		text-align: center;
+		padding-top: 2.3em;
 	}
 }
